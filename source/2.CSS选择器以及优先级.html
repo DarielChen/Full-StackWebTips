@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS选择器以及权值</title>
+    <style>
+
+        /*<!-- !important 权值最高为1000 -->*/
+
+        /* 通用选择器: 同时选中页面中的所有元素 */
+        /* 权值: 0 */
+        *{
+            color: orange;
+        }
+
+        /* 标签选择器: 选中页面中对应的所有标签 */
+        /* 权值: 1 */
+        div{
+            color: red;
+        }
+
+        /* 类选择器: 选择同一类名所对应的标签*/
+        /* 权值: 10 */
+        .box1{
+            color: chocolate;
+        }
+
+        /*id选择器: 选中特定id的标签, id具有唯一性*/
+        /* 权值: 100 */
+        #test3{
+            color: cyan;
+        }
+
+        /*否定伪类选择器: 选择非指定类型的元素*/
+        :not(#test3){
+            color: sienna;
+        }
+
+        /*兄弟选择器: 根据从属关系,选择同一层级的元素, ~查找后边所有的兄弟元素. +查找后边一个兄弟元素*/
+        #test1 ~ .box1{
+            color: cornflowerblue;
+        }
+
+        /*直接后代选择器: 有直接层级关系的元素*/
+        /* 权值: 100+100 */
+        #content>#test3 {
+            color: darkorange;
+        }
+
+        /* 属性选择器: 获取包含某一属性名的元素 */
+        /* 权值: 10 */
+        *[id] {
+            color:darkblue;
+        }
+
+        /*伪类: 对于特殊的场景使用的标签,例如段落首行或鼠标进入,选择第一个子标签,选择指定位置的子元素等*/
+        /* 权值: 10 */
+        #test3:hover{
+            font-size: 20%;
+        }
+
+        /* 后代选择器: 根据父类标签和子类标签选择元素*/
+        /* 权值: 10+1 权值为两者相加*/
+        body .box1 {
+            color: purple;
+        }
+
+        /*群组选择器: 满足其中的一个标签元素 */
+        /* 权值: 权值要比所选择的类选择器和id选择器都要低 */
+        #test3, .box1{
+            color: green;
+        }
+
+        /*复合选择器: 同时满足多个条件的元素*/
+        /* 权值: 10+1 权值为两者相加*/
+        div .box1{
+            color: burlywood;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="content">
+        <div id="test1" class="box1">
+            这是第一行文本...
+        </div>
+        <div id="test2" class="box1">
+            这是第二行文本...
+        </div>
+        <div id="test3" class="box1">
+            这是第三行文本...
+        </div>
+    </div>
+
+</body>
+</html>
