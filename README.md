@@ -34,7 +34,7 @@ display:block;
 dipslay:inline-block;
 ```
 <h2 id="2">2.CSS选择器以及优先级</h2>  
-####  [css常用的选择器(打开右击查看源码)]():
+#### [css常用的选择器(打开右击查看源码)](https://darielchen.github.io/Full-StackWebTips/source/2.CSS%E9%80%89%E6%8B%A9%E5%99%A8%E4%BB%A5%E5%8F%8A%E4%BC%98%E5%85%88%E7%BA%A7.html):
 
 #### 选择器的优先级:
 1. 权值加到一起，大的优先如果权值相同，后定义的优先.
@@ -50,3 +50,7 @@ id选择器 | 100
 !important修饰符 | 1000
 
 2. 优先级排序: !important修饰符>内联的样式>id选择器>类选择器>标签选择器! = 伪类选择器 = 属性选择器>*选择器>继承过来的样式
+
+
+
+
