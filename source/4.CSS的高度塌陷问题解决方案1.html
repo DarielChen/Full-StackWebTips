@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>高度塌陷</title>
+
+
+    <style>
+        span {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+        }
+
+        .box1 {
+            border: 5px olive solid;
+
+            /*去掉这行box3会塌陷上去*/
+            /*box1的高度靠box2支撑*/
+            overflow: hidden;
+        }
+
+        .box2 {
+            width: 50%;
+            height: 100px;
+            background-color: paleturquoise;
+            float: left;
+        }
+
+        .box3 {
+            height: 100px;
+            background-color: palegreen;
+
+        }
+    </style>
+
+</head>
+<body>
+    <span>高度塌陷</span>
+
+    <div class="box1">
+        <div class="box2"></div>
+    </div>
+    <div class="box3"></div>
+
+</body>
+</html>
