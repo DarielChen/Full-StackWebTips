@@ -7,7 +7,8 @@ Web全栈开发的一些知识点
 
 [1.标签元素的划分和互相转化](#1)  
 [2.CSS选择器以及优先级](#2)  
-[3.CSS的浮动和定位](#3)
+[3.CSS的浮动和定位](#3)  
+
 ---
 
 <h2 id="1">1.标签元素的划分和互相转化</h2>  
@@ -35,9 +36,8 @@ dipslay:inline-block;
 ```
 <h2 id="2">2.CSS选择器以及优先级</h2>  
 
-#### css常用的选择器:
-<a href="https://darielchen.github.io/Full-StackWebTips/source/2.CSS%E9%80%89%E6%8B%A9%E5%99%A8%E4%BB%A5%E5%8F%8A%E4%BC%98%E5%85%88%E7%BA%A7.html" target="_blank">CSS选择器以及优先级(打开页面后右击查看源码)</a>
-
+#### css常用的选择器:  
+[CSS选择器以及优先级(打开页面后右击查看源码)](https://darielchen.github.io/Full-StackWebTips/source/2.CSS%E9%80%89%E6%8B%A9%E5%99%A8%E4%BB%A5%E5%8F%8A%E4%BC%98%E5%85%88%E7%BA%A7.html)
 
 #### 选择器的优先级:
 1. 权值加到一起，大的优先,如果权值相同，后定义的优先.
@@ -56,9 +56,3 @@ id选择器 | 100
 
 
 <h2 id="3">3.CSS的浮动和定位</h2> 
-
-
-
-
-
-
