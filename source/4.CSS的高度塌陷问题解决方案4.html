@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>高度塌陷</title>
+
+
+    <style>
+        span {
+            display: inline-block;
+            width: 100%;
+            text-align: center;
+        }
+
+        /*#box1 {*/
+            /*border: 5px olive solid;*/
+
+        /*}*/
+
+        /*#box2 {*/
+            /*width: 50%;*/
+            /*height: 100px;*/
+            /*background-color: paleturquoise;*/
+            /*float: left;*/
+        /*}*/
+
+        /*#box3 {*/
+            /*height: 100px;*/
+            /*background-color: palegreen;*/
+        /*}*/
+
+        #box4{
+            width: 200px;
+            height: 200px;
+            background-color: palevioletred;
+        }
+
+
+        #box5{
+            width: 100px;
+            height: 100px;
+            background-color: cornflowerblue;
+            /*子元素和父元素相邻的垂直外边距会发生重叠，子元素的外边距会传递给父元素*/
+            margin-top: 100px;
+        }
+
+        .clear-fix:before,
+        .clear-fix:after{
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+    </style>
+
+</head>
+<body>
+<span>高度塌陷</span>
+
+<!--<div id="box1" class="clear-fix">-->
+    <!--<div id="box2"></div>-->
+<!--</div>-->
+<!--<div id="box3"></div>-->
+
+<div id="box4" class="clear-fix">
+    <!--<table></table>-->
+    <div id="box5"></div>
+</div>
+
+</body>
+</html>

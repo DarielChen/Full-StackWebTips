@@ -136,8 +136,8 @@ BFC是元素的隐含属性，默认是在关闭状态的,可以通过一些特�
 开启BFC的方式:
 - 设置元素浮动
 - 设置元素绝对定位
-- 设置元素的类型为inline-block
-- 设置overflow为一个非默认值,一般为:overflow:hidden
+- 设置元素的类型为`inline-block`
+- 设置overflow为一个非默认值,一般为:`overflow:hidden`
 
 [查看具体内容](https://darielchen.github.io/Full-StackWebTips/source/4.CSS%E7%9A%84%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%881.html)
 
@@ -163,3 +163,40 @@ clear:both;
 }
 ```  
 [查看具体内容](https://darielchen.github.io/Full-StackWebTips/source/4.CSS%E7%9A%84%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%883.html)
+
+4. 当子元素和父元素相邻的垂直外边距会发生重叠，子元素的外边距会传递给父元素.
+
+```html
+<style>
+#box4{
+width: 200px;
+height: 200px;
+background-color: palevioletred;
+}
+#box5{
+width: 100px;
+height: 100px;
+background-color: cornflowerblue;
+/*子元素和父元素相邻的垂直外边距会发生重叠，子元素的外边距会传递给父元素*/
+margin-top: 100px;
+}
+</style>
+
+<div id="box4" class="clear-fix">
+<!--<table></table>-->
+<div id="box5"></div>
+</div>
+```  
+也就是父元素的位置会随着子元素设置了margin-top而向下移动了100px,这时需要在box5前添加`<table></table>`
+结合上面3.中的伪类样式:
+```html
+.clear-fix:before,
+.clear-fix:after{
+content: '';
+display: table;
+clear: both;
+}
+```
+这样以后碰到类似问题就可以直接用了.
+
+[查看具体内容](https://darielchen.github.io/Full-StackWebTips/source/4.CSS%E7%9A%84%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%884.html)
