@@ -203,13 +203,16 @@ BFC是元素的隐含属性，默认是在关闭状态的,可以通过一些特�
 [查看具体内容](https://darielchen.github.io/Full-StackWebTips/source/4.CSS%E7%9A%84%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%884.html)
 
 
-<h2 id="5">5.Flexbox布局</h2>  
+<h2 id="5">5.Flexbox布局</h2>    
+
 #### 1.Flexbox布局的两种方式:  
 `display: inline-flex;`:将对象作为弹性伸缩盒展示,用于行内元素.  
 `display: flex;` :将对象作为弹性伸缩盒展示,用于块级元素.  
-#### 2.常用属性
-##### 1.flex-direction
-用于指定Flex**主轴**的方向,继而决定 Flex子项在Flex容器中的位置. 
+
+#### 2.常用属性  
+
+##### 1.flex-direction  
+用于指定Flex**主轴**的方向,继而决定 Flex子项在Flex容器中的位置.   
 ###### 取值：row | row-reverse | column | column-reverse
 - row：默认值,表示水平方向从左到右排列,此时水平方向轴线为主轴.
 - row-reverse：与row相反.
@@ -234,9 +237,9 @@ BFC是元素的隐含属性，默认是在关闭状态的,可以通过一些特�
 - flex-start：表示与侧轴开始位置对齐.
 - flex-end：表示与侧轴的结束位置对齐.
 - center：表示与侧轴中间对齐.
-- baseline：表示基线对齐,当行内轴与侧轴在同一线上,即所有Flex子项的基线在同一线上时,效果等同于flex-start.  
+- baseline：表示基线对齐,当行内轴与侧轴在同一线上,即所有Flex子项的基线在同一线上时,效果等同于flex-start.    
 
-[查看具体效果]()
+<!--[查看具体效果]()-->
 ##### 4.flex-wrap
 用于指定Flex子项是否换行.
 ###### 取值：nowrap | wrap | wrap-reverse
