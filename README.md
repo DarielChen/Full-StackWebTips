@@ -9,6 +9,7 @@ Web全栈开发的一些知识点
 [2.CSS选择器以及优先级](#2)  
 [3.CSS的浮动和定位](#3)  
 [4.CSS的高度塌陷问题](#4)
+[5.Flexbox布局](#5)  
 
 ---
 
@@ -200,3 +201,76 @@ BFC是元素的隐含属性，默认是在关闭状态的,可以通过一些特�
 这样以后碰到类似问题就可以直接用了.
 
 [查看具体内容](https://darielchen.github.io/Full-StackWebTips/source/4.CSS%E7%9A%84%E9%AB%98%E5%BA%A6%E5%A1%8C%E9%99%B7%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%884.html)
+
+
+<h2 id="5">5.Flexbox布局</h2>  
+#### 1.Flexbox布局的两种方式:  
+`display: inline-flex;`:将对象作为弹性伸缩盒展示,用于行内元素.  
+`display: flex;` :将对象作为弹性伸缩盒展示,用于块级元素.  
+#### 2.常用属性
+##### 1.flex-direction
+用于指定Flex**主轴**的方向,继而决定 Flex子项在Flex容器中的位置. 
+###### 取值：row | row-reverse | column | column-reverse
+- row：默认值,表示水平方向从左到右排列,此时水平方向轴线为主轴.
+- row-reverse：与row相反.
+- column：表示垂直方向从上到下排列,此时垂直方向轴线为主轴.
+- column-reverse：与column相反.  
+
+<!--[查看具体效果]()-->
+##### 2.justify-content
+用于指定主轴(水平方向)上Flex子项的对齐方式.
+###### 取值：flex-start | flex-end | center | space-between | space-around  
+- flex-start：默认值,表示与行的起始位置对齐.
+- flex-end：表示与行的结束位置对齐.
+- center：表示与行中间对齐.
+- space-between：表示两端对齐,中间间距相等.要注意特殊情况,当剩余空间为负数或者只有一个项时,效果等同于flex-start.
+- space-around：表示间距相等,中间间距是两端间距的2倍.要注意特殊情况，当剩余空间为负数或者只有一个项时,效果等同于center.  
+
+<!--[查看具体效果]()-->
+##### 3.align-items
+用于指定**侧轴**(垂直方向)上Flex子项的对齐方式.
+###### 取值：stretch | flex-start | flex-end | center | baseline
+- stretch：默认值,当Flex子项未设置高度或者高度值为auto时,stretch起作用,将Flex子项高度设置为行高度.这里需要注意,在只有一行的情况下,行的高度为容器的高度,即Flex子项高度为容器的高度.
+- flex-start：表示与侧轴开始位置对齐.
+- flex-end：表示与侧轴的结束位置对齐.
+- center：表示与侧轴中间对齐.
+- baseline：表示基线对齐,当行内轴与侧轴在同一线上,即所有Flex子项的基线在同一线上时,效果等同于flex-start.  
+
+[查看具体效果]()
+##### 4.flex-wrap
+用于指定Flex子项是否换行.
+###### 取值：nowrap | wrap | wrap-reverse
+- nowrap：默认值,表示不换行,Flex子项可能会溢出.
+- wrap：表示换行,溢出的Flex子项会被放到下一行.
+- wrap-reverse：表示反方向换行.  
+
+<!--[查看具体效果]()-->
+##### 5.align-content
+该属性只作用于多行的情况下,用于多行的对齐方式.
+###### 取值：stretch | flex-start | flex-end | center | space-between | space-around
+- stretch：默认值,当Flex子项未设置高度或者高度值为auto时,stretch起作用,将Flex子项高度设置为行高度.
+- flex-start：表示各行与侧轴开始位置对齐,第一行紧靠侧轴开始边界,之后的每一行都紧靠前面一行.
+- flex-end：表示各行与侧轴的结束位置对齐,最后一行紧靠侧轴结束边界,之后的每一行都紧靠前面一行.
+- center：表示各行与侧轴中间对齐.
+- space-between：表示两端对齐,中间间距相等.要注意特殊情况,当剩余空间为负数时,效果等同于flex-start.
+- space-around：表示各行之间间距相等,中间间距是两端间距的2倍.要注意特殊情况,当剩余空间为负数时,效果等同于center.  
+
+<!--[查看具体效果]()-->
+##### 6.align-self
+该属性用来**单独指定**某Flex子项的对齐方式.
+###### 取值：auto | flex-start | flex-end | center | baseline | stretch
+- auto: 默认值.元素继承了它的父容器的 align-items 属性.如果没有父容器则为stretch.
+- flex-start: 元素位于容器的开头.弹性盒子元素的侧轴(纵轴)起始位置的边界紧靠住该行的侧轴起始边界.
+- flex-end: 元素位于容器的结尾.弹性盒子元素的侧轴(纵轴)起始位置的边界紧靠住该行的侧轴结束边界.
+- center: 元素位于容器的中心.弹性盒子元素在该行的侧轴（纵轴）上居中放置.（如果该行的尺寸小于弹性盒子元素的尺寸,则会向两个方向溢出相同的长度）.
+- baseline: 元素位于容器的基线上.如弹性盒子元素的行内轴与侧轴为同一条,则该值与'flex-start'等效.其它情况下,该值将参与基线对齐.
+- stretch: 元素被拉伸以适应容器.
+
+<!--[查看具体效果]()-->
+#### 3.复合属性flex
+##### 复合属性flex,是flex-grow 、flex-shrink和flex-basis 的简写属性,用来指定Flex子项如何分配空间.
+- flex-grow：默认值为0,若省略则被默认为1.
+- flex-shrink：默认值为1,省略时默认为1.
+- flex-basis：默认值为auto,省略时默认为0%.
+
+<!--[查看具体效果]()-->
