@@ -10,9 +10,8 @@ Web全栈开发的一些知识点
 [3.CSS的浮动和定位](#3)  
 [4.CSS的高度塌陷问题](#4)  
 [5.Flexbox布局](#5)  
+[6.Javascript的几种日志输出方式](#6)  
 
-
----
 
 <h2 id="1">1.标签元素的划分和互相转化</h2>  
 
@@ -294,3 +293,39 @@ BFC是元素的隐含属性，默认是在关闭状态的,可以通过一些特�
 - flex-basis：默认值为auto,省略时默认为0%.
 
 <!--[查看具体效果]()-->
+
+
+<h2 id="6">6.Javascript的几种日志输出方式</h2>
+
+##### 1. 控制浏览器弹出一个警告框
+```javascript
+	alert("Hello, World!");
+```
+当不点击警告框上的确定按钮,`alert `下面的代码不会被执行.
+
+##### 2. 向body中输出一个内容
+```javascript
+	document.write("Hello World!");
+```
+
+##### 3. 向控制台输出一个内容
+```javascript
+	console.log("Hello World!");
+	console.warn("警告输出!"); 
+	console.error("错误输出!"); 
+```
+
+##### 4. 在网页中弹出输入框，一般用于接收用户输入的信息
+效果类似于1, `prompt`下面的代码在点击取消或确认前不会被执行.
+
+```javascript
+	prompt("Hello, World！"); 	
+```
+
+##### 5. 在网页中弹出提示框，显示信息
+类似1,多一个取消按钮.
+
+```javascript
+    confirm("Hello, World!");
+```
+
