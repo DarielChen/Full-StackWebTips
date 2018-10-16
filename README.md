@@ -299,33 +299,33 @@ BFC是元素的隐含属性，默认是在关闭状态的,可以通过一些特�
 
 ##### 1. 控制浏览器弹出一个警告框
 ```javascript
-	alert("Hello, World!");
+alert("Hello, World!");
 ```
 当不点击警告框上的确定按钮,`alert `下面的代码不会被执行.
 
 ##### 2. 向body中输出一个内容
 ```javascript
-	document.write("Hello World!");
+document.write("Hello World!");
 ```
 
 ##### 3. 向控制台输出一个内容
 ```javascript
-	console.log("Hello World!");
-	console.warn("警告输出!"); 
-	console.error("错误输出!"); 
+console.log("Hello World!");
+console.warn("警告输出!"); 
+console.error("错误输出!"); 
 ```
 
 ##### 4. 在网页中弹出输入框，一般用于接收用户输入的信息
 效果类似于1, `prompt`下面的代码在点击取消或确认前不会被执行.
 
 ```javascript
-	prompt("Hello, World！"); 	
+prompt("Hello, World！"); 	
 ```
 
 ##### 5. 在网页中弹出提示框，显示信息
 类似1,多一个取消按钮.
 
 ```javascript
-    confirm("Hello, World!");
+confirm("Hello, World!");
 ```
 
